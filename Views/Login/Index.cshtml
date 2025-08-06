@@ -1,0 +1,72 @@
+﻿@{
+    Layout = "_LoginLayout";
+}
+
+<div class="login-background">
+    <div style="display:flex;">
+        <form class="login-form">
+            <img src="~/img/Lock.webp" alt="shopping cart, Login" class="login-icon" />
+            <input type="text" placeholder="Username" name="username" class="login-input" required>
+            <input type="password" placeholder="Password" name="password" class="login-input" required>
+            <button type="submit" class="login-button">Login</button>
+
+        </form>
+    </div>
+</div>
+
+<style>
+    .login-background {
+        height: 100vh;
+        width: 100vw;
+        background-image: url('img/background.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        align-content: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+
+    .login-form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .login-icon {
+        width: 25%;
+        margin: 0 0 50px 0;
+    }
+
+    .login-input {
+        margin: 0 0 20px 0;
+        width: 40%;
+        background-color:transparent;
+        color: lightgray;
+        border: 1.5px solid white;
+        border-radius: 5px;
+    }
+
+        .login-input::placeholder {
+            color: lightgray;
+            text-align: center;
+        }
+
+        .login-input:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+    .login-button {
+        width: 40%;
+        color: midnightblue;
+        background-color: rgba(255, 255, 255, 255);
+        border: 1.5px solid white;
+        border-radius: 5px;
+        
+    }
+</style>
