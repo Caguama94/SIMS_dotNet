@@ -6,14 +6,31 @@
         public string? Username { get; set; }
         public string? Password { get; set; }
         public string? PhoneNumber { get; set; }
-        public string? Role { get; set; } // e.g., "Admin", "User", etc.
+        public Erole Role { get; set; } // e.g., "Admin", "User", etc.
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
-        public int AssignedWarehouse { get; set; } // e.g., "Alvarado", "Piedras negras", etc.
+        public Ewarehouses AssignedWarehouse { get; set; } // e.g., "Alvarado", "Piedras negras", etc.
         public DateTime BirthDate { get; set; } = DateTime.Now;
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
         
         
+    }
+
+    public enum Ewarehouses
+    {
+        Matriz,
+        PaseoDelToro,
+        PiedrasNegras,
+        Alvarado,
+        Monterrey
+    }
+
+    public enum Erole
+    {
+        Admin,
+        Editor,
+        Manager,
+        Sales
     }
 }

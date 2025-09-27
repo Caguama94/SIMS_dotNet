@@ -1,53 +1,64 @@
-﻿@{
+﻿@model SIMS_dotNet.Models.Users;
+@{
     Layout = "_LoginLayout";
+
 }
 
 <div class="login-background">
     <div style="display:flex;">
-        <form class="login-form">
+        <form class="login-form" asp-controller="UserRegistration" asp-action="Create" method="post">
             <img src="~/img/Lock.webp" alt="lock, Login" class="login-icon" />
 
             <div class="login-field">
                 <label for=" username">User:</label>
-                <input type="text" placeholder="Username" name="username" class="login-input" required>
+                <input asp-for="Username" type="text" placeholder="Username" name="username" class="login-input" required>
             </div>
 
             <div class="login-field">
                 <label for="password">Password:</label>
-                <input type="password" placeholder="Password" name="password" class="login-input" required>
-            </div>
-            
-            <div class="login-field">
-                <label for="firstName">Name:</label>
-                <input type="text" placeholder="First name" name="lastName" class="login-input" required />
-            </div>
-
-            <div class="login-field">
-                <label for="lastName">Last name:</label>
-                <input type="text" placeholder="Last name" name="lastName" class="login-input" required />
-            </div>
-
-            <div class="login-field">
-                <label for="birthDay">Birth day:</label>
-                <input type="date" placeholder="Birth day" name="birthDay" class="login-input" required />
+                <input asp-for="Password" type="password" placeholder="Password" name="password" class="login-input" required>
             </div>
 
             <div class="login-field">
                 <label for="phoneNumber">Phone number:</label>
-                <input type="tel" placeholder="Phone number" name="phoneNumber" class="login-input" required />
-            </div>
-
-            <div class="login-field">
-                <label for="warehouse">Assigned warehouse:</label>
-                <input type="text" placeholder="Warehouse" name="AssignedWarehouse" class="login-input" required />
+                <input asp-for="PhoneNumber" type="tel" placeholder="Phone number" name="phoneNumber" class="login-input" required />
             </div>
 
             <div class="login-field">
                 <label for="role">Admin privilegies:</label>
-                <input type="checkbox" name="userRole" class="login-input" required />
+                <select asp-for="Role" type="checkbox" name="userRole" class="login-input" required >
+                    <option value="0"> Admin</option>
+                    <option value="1"> Editor</option>
+                    <option value="2"> Manager</option>
+                    <option value="3"> Sales</option>
+                </select>
             </div>
 
-            
+            <div class="login-field">
+                <label for="firstName">Name:</label>
+                <input asp-for="FirstName" type="text" placeholder="First name" name="firstName" class="login-input" required />
+            </div>
+
+            <div class="login-field">
+                <label for="lastName">Last name:</label>
+                <input asp-for="LastName" type="text" placeholder="Last name" name="lastName" class="login-input" required />
+            </div>
+
+            <div class="login-field">
+                <label for="warehouse">Assigned warehouse:</label>
+                <select asp-for="AssignedWarehouse" "type=" text" placeholder="Warehouse" name="AssignedWarehouse" class="login-input" required>
+                    <option value="0">Matriz</option>
+                    <option value="1">Paseo Del Toro</option>
+                    <option value="2">Piedras Negras</option>
+                    <option value="3">Alvarado</option>
+                    <option value="4">Monterrey</option>
+                </select>
+            </div>
+
+            <div class="login-field">
+                <label for="birthDay">Birth day:</label>
+                <input asp-for="BirthDate" type="date" placeholder="Birth day" name="birthDay" class="login-input" required />
+            </div>
 
             <button type="submit" class="login-button">Login</button>
 
@@ -92,8 +103,8 @@
     }
 
         .login-field label {
-            display:flex;
-            width:50%;
+            display: flex;
+            width: 50%;
             margin-right: 10px;
             color: white;
             font-weight: bold;
