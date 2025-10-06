@@ -11,6 +11,7 @@ namespace SIMS_dotNet.Controllers
 
         public IActionResult Create()
         {
+
             return View();
         }
     }

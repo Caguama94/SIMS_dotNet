@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SIMS_dotNet.Data;
-using SIMS_dotNet.Models;
+using SIMS_dotNet.Models; 
 
 namespace SIMS_dotNet
 //TODO: completar las demas clases
